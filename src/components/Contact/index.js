@@ -1,17 +1,42 @@
 import './index.scss'
 import Loader from 'react-loaders';
 import AnimatedLetters from '../AnimatedLetters';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const Contact = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
+    const form = useRef()
 
     useEffect(() => {
         setTimeout(() => {
             setLetterClass('text-animate-hover')
         }, 3000)
     }, [])
+
+    const sendEmail = (e) => {
+        e.preventDefault()
+
+        emailjs
+           .sendForm(
+            'service_2uoc2tt',
+            'template_131r8c6',
+            form.current,
+            'fP-2pHCHoTOSa7djd'
+           )
+           .then(
+            () => {
+                alert('Email sent successfully! Thank you!')
+                window.location.reload(false)
+            },
+            () => {
+                alert('Something went wrong! Please try again!')
+            }
+           )
+    }
+
     return(
         <>
             <div className='container contact-page'>
@@ -26,7 +51,7 @@ const Contact = () => {
                         However, if you have any other requests or questions, dont hestitate to contact me using the form below!
                     </p>
                     <div className='contact-form'>
-                        <form>
+                        <form ref={form} onSubmit={sendEmail}>
                             <ul>
                                 <li className='half'>
                                     <input type='text' name='name' placeholder='Name' required/>
@@ -47,6 +72,22 @@ const Contact = () => {
                             </ul>
                         </form>
                     </div>
+                </div>
+                <div className='info-map'>
+                    Danny Ramirez,
+                    <br />
+                    Los Angeles, CA
+                    <br />
+                    259 E Santa Fe Ct, 92870 <br /> 
+                    <span>d.ramirezjr524@gmail.com</span>
+                </div>
+                <div className='map-wrap'>
+                    <MapContainer center={[33.870508, -117.856327]} zoom={13}>
+                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+                        <Marker position={[33.870508, -117.856327]}>
+                            <Popup>Where I reside :)</Popup>
+                        </Marker>
+                    </MapContainer>
                 </div>
             </div>
             <Loader type='pacman'/>

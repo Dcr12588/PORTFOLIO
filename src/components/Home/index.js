@@ -1,4 +1,3 @@
-import LogoD from '../../assets/images/logo-dr.png'
 import { Link } from 'react-router-dom'
 import './index.scss';
 import AnimatedLetters from '../AnimatedLetters';
@@ -9,8 +8,8 @@ import Loader from 'react-loaders';
 const Home = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
-    const nameArray = ['a', 'n', 'n', 'y', ',']
-    const jobArray = ['W', 'e', 'b', ' ', 'D', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
+    const nameArray = [' ','D','a', 'n', 'n', 'y',' ', 'R','a','m','i','r','e','z',',']
+    const jobArray = ['a','n',' ','a','s','p','i','r','i','n','g',' ', 'W', 'e', 'b', ' ', 'D', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
 
     useEffect(() => {
          setTimeout(() => {
@@ -27,17 +26,16 @@ const Home = () => {
                 <span className={`${letterClass} _12`}>i,</span>
                 <br />
                 <span className={`${letterClass} _13`}>I</span>
-                <span className={`${letterClass} _14`}>'m</span>
-                <img src={LogoD} alt='developer'/>
+                <span className={`${letterClass} _14`}>'m </span>
                 <AnimatedLetters letterClass={letterClass}
                 strArray={nameArray}
                 index={15}/>
                 <br />
                 <AnimatedLetters letterClass={letterClass}
                 strArray={jobArray}
-                index={22}/>
+                index={10}/>
                 </h1>
-                <h2>FullStack Developer / React Specialtist</h2>
+                <h2>FullStack Developer / React Specialist</h2>
                 <Link to='/contact' className='flat-button'>CONTACT ME</Link>
             </div>
             <Logo/>

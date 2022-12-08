@@ -31,12 +31,16 @@ const About = () => {
                     </p>
                     <p>
                         I'm hands on, naturally curious, and perpetually working on
-                        improving my skills one problem at a time.
+                        improving my skills one problem at a time. These traits came in handy during my DevMountain schooling adventure
+                        and made the experience life changing.
                     </p>
                     <p>
                         If I need to define myself in one sentence that would be a family
-                        person, partner to a beautiful girl, a video game fanatic,
-                        enthusiast of anime, and tech-obsessed!!!
+                        person, partner to a beautiful girlfriend, a video game fanatic,
+                        enthusiast of anime, and tech-obsessed!!
+                    </p>
+                    <p>
+                        Feel free to navigate to my linkedIn, which is located on the left nav bar, to see my first projects made in my DevMoutain experience!
                     </p>
                 </div>
 

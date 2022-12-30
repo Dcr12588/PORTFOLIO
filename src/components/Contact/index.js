@@ -78,7 +78,7 @@ const Contact = () => {
                     <br />
                     Los Angeles, CA
                     <br />
-                    259 E Santa Fe Ct, 92870 <br /> 
+                    Placentia, 92870 <br /> 
                     <span>d.ramirezjr524@gmail.com</span>
                 </div>
                 <div className='map-wrap'>
